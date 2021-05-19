@@ -45,7 +45,6 @@ fn calc_easter(year:i32) -> chrono::NaiveDate {
     debug!("mon is  {}", mon);
     let day:u32 = (((h + l - 7*m + 114) % 31) + 1).try_into().unwrap();
     debug!("day is  {}", day);
-//    let easter = Utc.ymd(year, mon, day).and_hms(0,0,0);
     let easter = NaiveDate::from_ymd(year, mon, day);
     easter
 }
@@ -67,8 +66,8 @@ fn main() {
         let entry = Entry::new();
         
         let grid: Grid = Grid::new();
-        grid.add(&spinbutton);
-        grid.add(&entry);
+        grid.attach(&spinbutton, 0, 0, 1, 1);
+        grid.attach(&entry, 0, 1, 1, 1);
         window.add(&grid);
 
         let entry_clone = entry.clone();
