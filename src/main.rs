@@ -66,6 +66,7 @@ fn main() {
         let entry = Entry::new();
         
         let grid: Grid = Grid::new();
+        entry.set_hexpand(true);
         grid.attach(&spinbutton, 0, 0, 1, 1);
         grid.attach(&entry, 0, 1, 1, 1);
         window.add(&grid);
